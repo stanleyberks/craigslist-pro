@@ -14,6 +14,7 @@ const nextConfig = {
 const sentryWebpackPluginOptions = {
   org: "alerts-dev",
   project: "javascript-nextjs",
+  authToken: process.env.SENTRY_AUTH_TOKEN,
   silent: !process.env.CI,
 };
 
