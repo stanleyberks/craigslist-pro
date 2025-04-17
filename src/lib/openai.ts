@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 import { cities } from '@/data/cities';
 
 const openai = new OpenAI({
-  apiKey: '***REMOVED***',
+  apiKey: process.env.OPENAI_API_KEY || '',
   dangerouslyAllowBrowser: false, // Only use on server-side
 });
 

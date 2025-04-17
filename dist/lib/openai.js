@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 import { cities } from '@/data/cities';
 const openai = new OpenAI({
-    apiKey: '***REMOVED***',
+    apiKey: process.env.OPENAI_API_KEY || '',
     dangerouslyAllowBrowser: false, // Only use on server-side
 });
 const CITY_SYSTEM_PROMPT = `You are a city normalization service. Your task is to match user input to valid Craigslist city values and return a JSON response.
