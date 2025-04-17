@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NEXT_PUBLIC_SUPABASE_URL = "https://ebczemwktvoncqhdxoyd.supabase.co"
+  NEXT_PUBLIC_API_URL = "https://mellifluous-mooncake-67f133.netlify.app/api"
+  NEXT_PUBLIC_APP_URL = "https://mellifluous-mooncake-67f133.netlify.app"
+  NEXT_PUBLIC_ENABLE_BETA_FEATURES = "false"
+  NEXT_PUBLIC_MAINTENANCE_MODE = "false"
+  NEXT_PUBLIC_SENTRY_DSN = "https://c2a029c2a064f23169f77b32b282b70d@o4509164871155712.ingest.de.sentry.io/4509164882624592"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

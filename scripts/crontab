@@ -1,0 +1,8 @@
+# Run database backup daily at 2 AM
+0 2 * * * /usr/bin/bash /path/to/craigslist/scripts/backup.sh >> /var/log/craigslist-backup.log 2>&1
+
+# Verify database integrity weekly on Sunday at 3 AM
+0 3 * * 0 /usr/bin/psql postgres -c "VACUUM ANALYZE;" >> /var/log/craigslist-vacuum.log 2>&1
+
+# Clean up old audit logs monthly
+0 4 1 * * /usr/bin/psql postgres -c "DELETE FROM audit_logs WHERE created_at < NOW() - INTERVAL '6 months';" >> /var/log/craigslist-cleanup.log 2>&1
