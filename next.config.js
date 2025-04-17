@@ -9,8 +9,6 @@ const nextConfig = {
   },
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'].filter(ext => !ext.includes('test')),
   trailingSlash: true,
-  output: 'export',
-  distDir: 'out',
 };
 
 const sentryWebpackPluginOptions = {
